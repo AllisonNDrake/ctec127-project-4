@@ -17,9 +17,9 @@ function display_letter_filters($filter){
 
     for($i=0 ; $i < count($letters) ; $i++){ 
         if ($filter == $letters[$i]) {
-            $class = 'class="d-inline-block text-light font-weight-bold p-1 mr-3 bg-dark"';
+            $class = 'class="text-light font-weight-bold p-1 mr-3 bg-dark"';
         } else {
-            $class = 'class="d-inline-block text-secondary p-1 mr-3 bg-light border rounded"';
+            $class = 'class="text-secondary p-1 mr-3 bg-light border rounded"';
         }
         echo "<u><a $class href='?filter=$letters[$i]' title='$letters[$i]'>$letters[$i]</a></u>";
     }
@@ -29,8 +29,8 @@ function display_letter_filters($filter){
 
 function display_record_table($result){
     echo '<div class="table-responsive">';
-    echo "<table class=\"table table-striped table-hover table-sm mt-3 table-bordered\">";
-    echo '<thead class="thead-dark"><tr><th class="bg-primary">Actions</th><th><a href="?sortby=student_id">Student ID</a></th><th><a href="?sortby=first_name">First Name</a></th><th><a href="?sortby=last_name">Last Name</a></th><th><a href="?sortby=email">Email</a></th><th><a href="?sortby=phone">Phone</a></th></tr></thead>';
+    echo "<table class=\"table table-striped table-hover table-sm mt-4\">";
+    echo '<thead class="thead-dark"><tr><th>Actions</th><th><a href="?sortby=student_id">Student ID</a></th><th><a href="?sortby=first_name">First Name</a></th><th><a href="?sortby=last_name">Last Name</a></th><th><a href="?sortby=email">Email</a></th><th><a href="?sortby=phone">Phone</a></th><th><a href="?sortby=degree_program">Degree Program</a></th><th><a href="?sortby=gpa">GPA</a></th><th><a href="?sortby=financial_aid">Financial Aid</a></th></tr></thead>';
     # $row will be an associative array containing one row of data at a time
     while ($row = $result->fetch_assoc()){
         # display rows and columns of data
